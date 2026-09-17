@@ -1,2 +1,488 @@
-# Tamzy-web
-Tamzy - web business sit 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tamzy Web | Web Design & Digital Services</title>
+
+  <meta name="description" content="Tamzy Web provides modern website design and digital services. Contact us directly on WhatsApp.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080b12;
+      color: white;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAVIGATION */
+    nav {
+      width: 100%;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(8, 11, 18, 0.95);
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #202633;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #00e5ff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #ddd;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00e5ff;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      padding: 150px 7% 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        radial-gradient(circle at top, #12304a 0%, #080b12 55%);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 9vw, 85px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #00e5ff;
+    }
+
+    .hero p {
+      color: #b9c1cf;
+      font-size: 19px;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .buttons {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: #00e5ff;
+      color: #061018;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 229, 255, 0.25);
+    }
+
+    .btn-secondary {
+      border: 1px solid #394354;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      border-color: #00e5ff;
+      color: #00e5ff;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 90px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #9da7b7;
+    }
+
+    /* SERVICES */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+    }
+
+    .service-card {
+      background: #111722;
+      border: 1px solid #202938;
+      border-radius: 18px;
+      padding: 30px;
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: #00e5ff;
+    }
+
+    .service-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .service-card p {
+      color: #aab3c2;
+    }
+
+    /* ABOUT */
+    .about {
+      background: #0d121b;
+    }
+
+    .about-box {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-box p {
+      color: #b7c0ce;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    /* CONTACT */
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      background: #111722;
+      border: 1px solid #242d3c;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .contact-box h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      color: #adb6c4;
+      margin-bottom: 25px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px 7%;
+      background: #05070b;
+      border-top: 1px solid #202633;
+      color: #8993a3;
+    }
+
+    footer strong {
+      color: #00e5ff;
+    }
+
+    /* WHATSAPP FLOATING BUTTON */
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      z-index: 2000;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+      transition: 0.3s;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.1);
+    }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+      .nav-links {
+        display: none;
+      }
+
+      nav {
+        padding: 16px 5%;
+      }
+
+      section {
+        padding: 70px 5%;
+      }
+
+      .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .contact-box {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="logo">Tamzy Web</div>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+
+      <h1>
+        Welcome to <span>Tamzy Web</span>
+      </h1>
+
+      <p>
+        We create modern websites and digital solutions
+        that help businesses build a strong online presence.
+      </p>
+
+      <div class="buttons">
+        <a
+          href="https://wa.me/2349136369187?text=Hello%20Tamzy%20Web%2C%20I%20am%20interested%20in%20your%20services."
+          class="btn btn-primary"
+          target="_blank">
+          💬 Message on WhatsApp
+        </a>
+
+        <a href="#services" class="btn btn-secondary">
+          View Services
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+  <section id="services">
+
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>Professional digital services for individuals and businesses.</p>
+    </div>
+
+    <div class="services">
+
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <h3>Website Design</h3>
+        <p>
+          Modern, responsive and professional websites
+          designed for your business or personal brand.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <h3>Graphic Design</h3>
+        <p>
+          Creative designs for businesses, social media,
+          flyers, logos and promotional materials.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <h3>Social Media Design</h3>
+        <p>
+          Attractive content and designs to help your
+          social media presence look more professional.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💻</div>
+        <h3>Digital Solutions</h3>
+        <p>
+          We help businesses move online with simple
+          and useful digital solutions.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+
+    <div class="section-title">
+      <h2>About Tamzy Web</h2>
+    </div>
+
+    <div class="about-box">
+
+      <p>
+        <strong>Tamzy Web</strong> is a digital service brand
+        focused on helping businesses and individuals establish
+        a professional presence online.
+      </p>
+
+      <p>
+        From website design to creative digital services,
+        our goal is to turn ideas into modern online experiences.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact">
+
+    <div class="section-title">
+      <h2>Let's Work Together</h2>
+      <p>Ready to take your business online?</p>
+    </div>
+
+    <div class="contact-box">
+
+      <h3>Contact Tamzy Web</h3>
+
+      <p>
+        Send us a message and tell us what you need.
+        We will get back to you directly.
+      </p>
+
+      <div class="contact-buttons">
+
+        <a
+          href="https://wa.me/2349136369187?text=Hello%20Tamzy%20Web%2C%20I%20want%20to%20make%20an%20inquiry."
+          class="btn btn-primary"
+          target="_blank">
+          💬 WhatsApp
+        </a>
+
+        <a
+          href="tel:+2349136369187"
+          class="btn btn-secondary">
+          📞 Call Us
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>
+      © <span id="year"></span>
+      <strong>Tamzy Web</strong>.
+      All rights reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- FLOATING WHATSAPP -->
+  <a
+    class="whatsapp"
+    href="https://wa.me/2349136369187?text=Hello%20Tamzy%20Web%2C%20I%20am%20interested%20in%20your%20services."
+    target="_blank"
+    aria-label="Chat with Tamzy Web on WhatsApp">
+    💬
+  </a>
+
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
